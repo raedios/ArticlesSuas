@@ -139,12 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				13A00B471FC1A6E100C7A68F /* Info.plist */,
-				13A00B761FC1E8EC00C7A68F /* Actions */,
 				13A00B881FC1EF1100C7A68F /* Infrastructure */,
 				13A00B6D1FC1C04600C7A68F /* Models */,
-				13A00B741FC1E84C00C7A68F /* Screens */,
-				13A00B7F1FC1EA7200C7A68F /* Store */,
 				13A00B751FC1E87000C7A68F /* Supporting Files */,
+				13A00B741FC1E84C00C7A68F /* UseCases */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -184,13 +182,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		13A00B741FC1E84C00C7A68F /* Screens */ = {
+		13A00B741FC1E84C00C7A68F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
 				13A00B801FC1EC6B00C7A68F /* Articles */,
 				13A00B3F1FC1A6E100C7A68F /* Main.storyboard */,
 			);
-			path = Screens;
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		13A00B751FC1E87000C7A68F /* Supporting Files */ = {
@@ -239,8 +237,10 @@
 		13A00B801FC1EC6B00C7A68F /* Articles */ = {
 			isa = PBXGroup;
 			children = (
-				13A00B811FC1EC7600C7A68F /* Cells */,
 				13A00B691FC1A85A00C7A68F /* ArticlesViewController.swift */,
+				13A00B761FC1E8EC00C7A68F /* Actions */,
+				13A00B811FC1EC7600C7A68F /* Cells */,
+				13A00B7F1FC1EA7200C7A68F /* Store */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
