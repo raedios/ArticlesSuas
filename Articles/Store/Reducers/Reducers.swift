@@ -23,6 +23,11 @@ struct FetchArticlesReducer: Reducer {
             return SerchSection(section: action.section)
         }
         
+        if let _ = action as? ArticlesFetchEnded {
+            
+            return SerchSection(section: Section())
+        }
+        
         return nil
     }
 }

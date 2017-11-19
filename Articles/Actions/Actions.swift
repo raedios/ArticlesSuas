@@ -13,10 +13,20 @@ import Suas
 
 struct FetchArticlesAsyncAction: AsyncAction {
     
+    let url: String
+    
+    init(url: String) {
+        self.url = url
+    }
+    
     func execute(getState: @escaping GetStateFunction, dispatch: @escaping DispatchFunction) {
         
         // Set the url
-        let url = URL(string:"https://support.zendesk.com/api/v2/help_center/en-us/sections/200623776/articles.json")!
+        guard let url = URL(string:self.url) else {
+            
+            dispatch(ArticlesFetchEnded(fetchEnded: true))
+            return
+        }
         
         // Perform async request
         URLSession(configuration: .default).dataTask(with: url) { data, response, error in
@@ -27,10 +37,14 @@ struct FetchArticlesAsyncAction: AsyncAction {
             
             // Dispatch action with parsed data
             dispatch(ArticlesFetchedAction(section: section!))
-            }.resume()
+        }.resume()
     }
 }
 
 struct ArticlesFetchedAction: Action {
     let section: Section
+}
+
+struct ArticlesFetchEnded: Action {
+    let fetchEnded: Bool
 }

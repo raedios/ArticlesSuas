@@ -21,6 +21,8 @@ class Section: Mappable {
     var sortBy: String?
     var sortOrder: String?
     
+    var isEmpty: Bool { return articles.count == 0 }
+    
     // MARK: - Initializers
     
     init() {

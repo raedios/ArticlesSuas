@@ -15,7 +15,7 @@ let store = Suas.createStore(reducer: FetchArticlesReducer(), middleware: AsyncM
 
 // MARK: - ViewController
 
-class ArticlesViewController: UIViewController, UITableViewDataSource {
+class ArticlesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Views
     
@@ -24,7 +24,7 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
     // MARK: - Properties
     
     var subscription: Subscription<SerchSection>?
-    var stateSection = Section()
+    var stateSection = [Section]()
     
     // MARK: - Lifecycle
     
@@ -35,14 +35,20 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
         tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: "ArticleCellID")
         
         // Dispatch the Fetch Articles Async Action
-        store.dispatch(action: FetchArticlesAsyncAction())
+        store.dispatch(action: FetchArticlesAsyncAction(url: Constants.baseUrl))
 
         // Add a listener to the store
         subscription = store.addListener(forStateType: SerchSection.self)  { [weak self] state in
 
-            // Update UI
-            self?.stateSection = state.section
-            self?.tableView.reloadData()
+            if state.section.isEmpty {
+                
+                self?.tableView.hideSpinnerInFooter()
+            } else {
+                
+                // Update UI
+                self?.stateSection.append(state.section)
+                self?.tableView.reloadData()
+            }
         }
     }
 
@@ -53,18 +59,37 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - UITableView DataSource Methods
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return stateSection.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stateSection.articles.count
+        return stateSection[section].articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Create a new cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCellID", for: indexPath) as! ArticleCell
-        cell.configure(with: stateSection.articles[indexPath.row])
+        cell.configure(with: stateSection[indexPath.section].articles[indexPath.row])
         
         return cell
     }
     
+    // MARK: - UITableView Delegate Methods
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        
+        // If last cell, we load the next page
+        if indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex {
+            
+            self.tableView.showSpinnerInFooter()
+            
+            // Dispatch the Fetch Articles Async Action
+            store.dispatch(action: FetchArticlesAsyncAction(url: stateSection[indexPath.section].nextPage ?? ""))
+        }
+    }
 }
