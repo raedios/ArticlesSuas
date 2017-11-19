@@ -28,8 +28,7 @@ struct FetchArticlesAsyncAction: AsyncAction {
             return
         }
         
-        // Perform async request
-        URLSession(configuration: .default).dataTask(with: url) { data, response, error in
+        Networking.sendRequest(url: url) { (data) in
             
             // When async request is done, dispatch actions
             let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
@@ -37,7 +36,7 @@ struct FetchArticlesAsyncAction: AsyncAction {
             
             // Dispatch action with parsed data
             dispatch(ArticlesFetchedAction(section: section!))
-        }.resume()
+        }
     }
 }
 
