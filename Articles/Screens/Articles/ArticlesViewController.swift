@@ -31,6 +31,9 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Register the cell
+        tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: "ArticleCellID")
+        
         // Dispatch the Fetch Articles Async Action
         store.dispatch(action: FetchArticlesAsyncAction())
 
@@ -38,7 +41,7 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
         subscription = store.addListener(forStateType: SerchSection.self)  { [weak self] state in
 
             // Update UI
-            print("Sections: \(state.section)")
+            self?.stateSection = state.section
             self?.tableView.reloadData()
         }
     }
@@ -56,6 +59,11 @@ class ArticlesViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // Create a new cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCellID", for: indexPath) as! ArticleCell
+        cell.configure(with: stateSection.articles[indexPath.row])
+        
+        return cell
     }
     
     

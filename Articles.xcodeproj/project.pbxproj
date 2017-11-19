@@ -21,6 +21,7 @@
 		13A00B7E1FC1EA5D00C7A68F /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A00B7D1FC1EA5D00C7A68F /* States.swift */; };
 		13A00B861FC1ECC000C7A68F /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A00B841FC1ECC000C7A68F /* ArticleCell.swift */; };
 		13A00B871FC1ECC000C7A68F /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A00B851FC1ECC000C7A68F /* ArticleCell.xib */; };
+		13A00B8B1FC1EF3300C7A68F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A00B8A1FC1EF3300C7A68F /* Date+Extension.swift */; };
 		3B4B009E52C422552D7D2C4C /* Pods_ArticlesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45AE94588575E50A0D57F71 /* Pods_ArticlesUITests.framework */; };
 		79D5E490FA66653781D28FB1 /* Pods_Articles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F402765851335E274DE7AF8F /* Pods_Articles.framework */; };
 		D64C774B550466C9CC025531 /* Pods_ArticlesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A46A661C3A6486360542EB /* Pods_ArticlesTests.framework */; };
@@ -64,6 +65,7 @@
 		13A00B7D1FC1EA5D00C7A68F /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		13A00B841FC1ECC000C7A68F /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		13A00B851FC1ECC000C7A68F /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		13A00B8A1FC1EF3300C7A68F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		1E9F47AB7FAED993A18088EB /* Pods-ArticlesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArticlesUITests/Pods-ArticlesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F676513686046CF1EF93736 /* Pods-Articles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Articles/Pods-Articles.debug.xcconfig"; sourceTree = "<group>"; };
 		5EC14F07826B9D42E2362251 /* Pods-Articles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articles.release.xcconfig"; path = "Pods/Target Support Files/Pods-Articles/Pods-Articles.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		13A00B3A1FC1A6E100C7A68F /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				13A00B881FC1EF1100C7A68F /* Infrastructure */,
 				13A00B7F1FC1EA7200C7A68F /* Store */,
 				13A00B761FC1E8EC00C7A68F /* Actions */,
 				13A00B471FC1A6E100C7A68F /* Info.plist */,
@@ -241,6 +244,22 @@
 				13A00B851FC1ECC000C7A68F /* ArticleCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		13A00B881FC1EF1100C7A68F /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				13A00B891FC1EF1B00C7A68F /* Extensions */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		13A00B891FC1EF1B00C7A68F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13A00B8A1FC1EF3300C7A68F /* Date+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D3D80C0DC9C5C2E9493D257C /* Pods */ = {
@@ -567,6 +586,7 @@
 				13A00B781FC1E90E00C7A68F /* Actions.swift in Sources */,
 				13A00B7E1FC1EA5D00C7A68F /* States.swift in Sources */,
 				13A00B3C1FC1A6E100C7A68F /* AppDelegate.swift in Sources */,
+				13A00B8B1FC1EF3300C7A68F /* Date+Extension.swift in Sources */,
 				13A00B731FC1E34900C7A68F /* Section.swift in Sources */,
 				13A00B6A1FC1A85A00C7A68F /* ArticlesViewController.swift in Sources */,
 				13A00B711FC1C09100C7A68F /* Article.swift in Sources */,

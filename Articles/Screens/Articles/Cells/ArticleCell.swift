@@ -10,15 +10,25 @@ import UIKit
 
 class ArticleCell: UITableViewCell {
 
+    // MARK: - Views
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var bodySubset: UILabel!
+    @IBOutlet weak var lastUpdate: UILabel!
+    
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // MARK: - UI Update
     
+    func configure(with article: Article) {
+     
+        title.text = article.title
+        bodySubset.text = article.body
+        lastUpdate.text = "Last Update: \(article.updatedAt?.shortFormatString() ?? "")"
+    }
 }
