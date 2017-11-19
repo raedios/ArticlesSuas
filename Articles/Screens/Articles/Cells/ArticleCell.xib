@@ -13,29 +13,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCellID" rowHeight="108" id="KGk-i7-Jjw" customClass="ArticleCell" customModule="Articles" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="298" height="108"/>
+            <rect key="frame" x="0.0" y="0.0" width="340" height="108"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="298" height="107.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="107.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-0X-QoK">
-                        <rect key="frame" x="11" y="11" width="298" height="85.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-0X-QoK">
+                        <rect key="frame" x="11" y="11" width="318" height="85.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa5-Bg-C7o">
-                                <rect key="frame" x="0.0" y="0.0" width="298" height="23.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Subset" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESs-0m-1Jl">
-                                <rect key="frame" x="0.0" y="33.5" width="298" height="20.5"/>
+                                <rect key="frame" x="0.0" y="36" width="318" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/01/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibY-mK-boJ">
-                                <rect key="frame" x="0.0" y="64" width="298" height="21.5"/>
+                                <rect key="frame" x="0.0" y="69.5" width="318" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="IGa-0X-QoK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="3mI-3N-kE4"/>
-                    <constraint firstAttribute="bottom" secondItem="IGa-0X-QoK" secondAttribute="bottom" constant="11" id="47D-rB-HuY"/>
-                    <constraint firstAttribute="trailing" secondItem="IGa-0X-QoK" secondAttribute="trailing" constant="11" id="ES4-ov-wDE"/>
-                    <constraint firstItem="IGa-0X-QoK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="LZB-mh-hAa"/>
+                    <constraint firstItem="IGa-0X-QoK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="Ctl-0q-4On"/>
+                    <constraint firstItem="IGa-0X-QoK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ISG-na-uki"/>
+                    <constraint firstAttribute="trailing" secondItem="IGa-0X-QoK" secondAttribute="trailing" constant="11" id="RSD-mE-S28"/>
+                    <constraint firstAttribute="bottom" secondItem="IGa-0X-QoK" secondAttribute="bottom" constant="11" id="WfZ-s9-fLB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -56,7 +56,7 @@
                 <outlet property="lastUpdate" destination="ibY-mK-boJ" id="V88-eX-rw2"/>
                 <outlet property="title" destination="Pa5-Bg-C7o" id="mA6-JN-ZNM"/>
             </connections>
-            <point key="canvasLocation" x="23" y="86"/>
+            <point key="canvasLocation" x="44" y="86"/>
         </tableViewCell>
     </objects>
 </document>

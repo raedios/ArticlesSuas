@@ -10,6 +10,7 @@ target 'Articles' do
   # Pods for Articles
   pod "Suas", '~> 1.0'
   pod 'ObjectMapper'
+  pod "SwiftSoup"
 
   target 'ArticlesTests' do
     inherit! :search_paths

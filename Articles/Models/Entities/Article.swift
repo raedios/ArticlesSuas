@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import SwiftSoup
 
 class Article: Mappable {
     
@@ -34,6 +35,20 @@ class Article: Mappable {
     var outdated: Bool?
     var outdatedLocales: [String]?
     var labelNames: [String]?
+    
+    var parsedBody: String {
+        
+        do{
+            let doc: Document = try SwiftSoup.parse(body ?? "")
+            return try doc.text()
+        }catch Exception.Error( _, let message){
+            print(message)
+        }catch{
+            print("error while parsing HTML")
+        }
+        
+        return ""
+    }
     
     // MARK: - Initializers
     

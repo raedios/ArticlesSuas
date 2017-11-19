@@ -28,7 +28,7 @@ class ArticleCell: UITableViewCell {
     func configure(with article: Article) {
      
         title.text = article.title
-        bodySubset.text = article.body
+        bodySubset.text = article.parsedBody
         lastUpdate.text = "Last Update: \(article.updatedAt?.shortFormatString() ?? "")"
     }
 }

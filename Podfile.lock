@@ -1,15 +1,18 @@
 PODS:
   - ObjectMapper (3.0.0)
   - Suas (1.0.0)
+  - SwiftSoup (1.5.4)
 
 DEPENDENCIES:
   - ObjectMapper
   - Suas (~> 1.0)
+  - SwiftSoup
 
 SPEC CHECKSUMS:
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   Suas: 40dafb962f1ad813fd8d7a248bbf681fb18f4034
+  SwiftSoup: f8e924cd65a1d74eb7ba1b6f0a9a61feacaff690
 
-PODFILE CHECKSUM: 010fed2c9f2c9a8f4e8e2cab06bc4d9ccc74ed06
+PODFILE CHECKSUM: d1888542fdfee7525a91a80d2a1c376c26f045fc
 
 COCOAPODS: 1.3.1
